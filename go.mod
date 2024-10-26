@@ -1,4 +1,4 @@
-module github.com/xHozey/KrakenGames
+module github.com/xHozey/krakenGames
 
 go 1.22.3
 
