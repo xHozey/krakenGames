@@ -1,4 +1,4 @@
-package types
+package handler
 
 import "database/sql"
 
@@ -30,6 +30,6 @@ type GameInfo struct {
 	Version      string   `json:"version"`
 }
 
-type Db struct {
-	Data *sql.DB
+type DataBase struct {
+	Db *sql.DB
 }
