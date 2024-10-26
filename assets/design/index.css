@@ -1,0 +1,127 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: monospace;
+}
+
+nav {
+    background: #1a2631;
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+label.logo {
+    color: #1abc9c;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+nav ul {
+    display: flex;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    line-height: 80px;
+    font-size: 20px; /* Adjusted font size for better responsiveness */
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: white;
+    padding: 10px 15px; /* Added padding for better clickable area */
+    border-radius: 3px;
+}
+
+a.active,
+a:hover {
+    background: #e67e22;
+    transition: 0.5s;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column; /* Stack items vertically */
+        height: auto; /* Allow height to adjust */
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack list items vertically */
+        width: 100%; /* Make the list full width */
+        text-align: center; /* Center text */
+    }
+
+    nav ul li {
+        margin: 10px 0; /* Space between items */
+    }
+
+    label.logo {
+        padding: 10px 0; /* Adjust padding */
+        text-align: center; /* Center logo */
+    }
+
+    nav ul li a {
+        font-size: 18px; /* Adjust font size for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    nav ul li {
+        font-size: 16px; /* Further reduce font size on very small screens */
+    }
+
+    label.logo {
+        font-size: 28px; /* Reduce logo size */
+    }
+}
+
+/* Add this to your existing CSS */
+
+nav ul {
+    position: relative; /* Make the nav items relative */
+}
+
+.dropdown-content {
+    display: none; /* Hidden by default */
+    position: absolute; /* Position it absolutely */
+    background-color: #1a2631; /* Match the nav background */
+    min-width: 160px; /* Set a min width */
+    z-index: 1; /* Ensure it appears above other elements */
+}
+
+.dropdown-content li {
+    display: block; /* Stack items vertically */
+    line-height: 40px; /* Adjust line height for better spacing */
+}
+
+.dropdown-content li a {
+    padding: 10px 15px; /* Padding for the links */
+    color: white; /* Link color */
+    text-align: left; /* Align text to the left */
+}
+
+.dropdown-content li a:hover {
+    background: #e67e22; /* Highlight on hover */
+}
+
+/* Add these to the existing nav ul styles */
+nav ul li {
+    position: relative; /* Ensure dropdown is positioned correctly */
+}
+
+
+.categorie{
+    font-size: 12px;
+}
