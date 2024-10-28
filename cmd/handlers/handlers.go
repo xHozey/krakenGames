@@ -8,10 +8,6 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func HomeHandler(g *gin.Context) {
-	g.HTML(http.StatusOK, "index.html", nil)
-}
-
 func (db *DataBase) Post(g *gin.Context) {
 	if g.Request.Method == http.MethodGet {
 		g.HTML(http.StatusOK, "post.html", nil)

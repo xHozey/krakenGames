@@ -19,13 +19,11 @@ func main() {
 		fmt.Println("error in opening db: ", err)
 	}
 	r := gin.Default()
-	r.LoadHTMLGlob("../assets/templates/*")
-	r.Static("/design", "../assets/design")
-	r.Static("/scripts", "../assets/scripts")
+	r.Static("/static", "../assets/frontend/build/static")
+	r.StaticFile("/", "../assets/frontend/build/index.html")
 	r.Static("/uploads", "../assets/uploads")
-	r.GET("/games", data.Api)
+	r.GET("/api", data.Api)
 	r.GET("/post", data.Post)
 	r.POST("/post", data.Post)
-	r.GET("/", handler.HomeHandler)
 	r.Run()
 }
