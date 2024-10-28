@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom/client";
+import { Button } from "./components/ui/button";
+import './index.css'
+
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -62,6 +66,8 @@ const NavBar = () => {
       <div>
         {items}
       </div>
+      <Button variant="outline">Button</Button>
+
     </div>
   );
 };
