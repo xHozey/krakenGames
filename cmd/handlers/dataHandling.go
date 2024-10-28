@@ -57,7 +57,7 @@ func (db *DataBase) getData() ([]Post, error) {
 	for rows.Next() {
 		var post Post
 		err := rows.Scan(&post.Id, &post.Title, &post.Content, &post.Image)
-		//stm,err := db.Db.Prepare("SELECT screen FROM Screens WHERE post_id = ?")
+		// stm,err := db.Db.Prepare("SELECT screen FROM Screens WHERE post_id = ?")
 		if err != nil {
 			return nil, fmt.Errorf("error scanning row: %w", err)
 		}

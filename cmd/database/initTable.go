@@ -29,6 +29,7 @@ func InitDB(db *sql.DB) error {
 	// Create GameInfo table
 	createGameInfoTable := `CREATE TABLE IF NOT EXISTS GameInfo (
 		post_id INTEGER,
+		genre TEXT,
 		developer TEXT,
 		platform TEXT,
 		game_size TEXT,
@@ -45,14 +46,6 @@ func InitDB(db *sql.DB) error {
 		FOREIGN KEY (post_id) REFERENCES Post(id) ON DELETE CASCADE
 	);`
 
-	// Create Genre table for storing multiple genres per Post
-	createGenreTable := `CREATE TABLE IF NOT EXISTS Genre (
-		id INTEGER PRIMARY KEY AUTOINCREMENT,
-		post_id INTEGER,
-		genre TEXT,
-		FOREIGN KEY (post_id) REFERENCES Post(id) ON DELETE CASCADE
-	);`
-
 	// Execute table creation statements
 	if _, err := db.Exec(createPostTable); err != nil {
 		return fmt.Errorf("failed to create Post table: %v", err)
@@ -65,9 +58,6 @@ func InitDB(db *sql.DB) error {
 	}
 	if _, err := db.Exec(createScreensTable); err != nil {
 		return fmt.Errorf("failed to create Screens table: %v", err)
-	}
-	if _, err := db.Exec(createGenreTable); err != nil {
-		return fmt.Errorf("failed to create Genre table: %v", err)
 	}
 
 	return nil

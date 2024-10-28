@@ -10,7 +10,8 @@ import (
 
 func (db *DataBase) Post(g *gin.Context) {
 	if g.Request.Method == http.MethodGet {
-		g.HTML(http.StatusOK, "post.html", nil)
+		g.File("../assets/frontend/build/index.html")
+		return
 	} else if g.Request.Method == http.MethodPost {
 		title := g.PostForm("title")
 		content := g.PostForm("content")
