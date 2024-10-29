@@ -26,5 +26,6 @@ func main() {
 	r.GET("/api/:id", data.GetPostById)
 	r.GET("/post", data.Post)
 	r.POST("/post", data.Post)
+	r.GET("/:id", data.GameInfo)
 	r.Run()
 }

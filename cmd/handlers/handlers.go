@@ -7,6 +7,9 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+func (db *DataBase) GameInfo(g *gin.Context) {
+}
+
 func (db *DataBase) Post(g *gin.Context) {
 	if g.Request.Method == http.MethodGet {
 		g.File("../assets/frontend/build/index.html")
