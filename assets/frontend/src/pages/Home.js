@@ -5,7 +5,6 @@ import NavBar from "../components/ui/NavBar";
 
 const HomePage = () => {
   const [info, setInfo] = useState([]);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   useEffect(() => {
     const getData = async () => {
