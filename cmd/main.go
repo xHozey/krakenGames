@@ -19,9 +19,11 @@ func main() {
 		fmt.Println("error in opening db: ", err)
 	}
 	r := gin.Default()
-	r.Static("/static", "../assets/frontend/build/static")
-	r.StaticFile("/", "../assets/frontend/build/index.html")
+	r.LoadHTMLGlob("../assets/templates/*")
+	r.Static("/scripts", "../assets/scripts")
 	r.Static("/uploads", "../assets/uploads")
+	r.Static("/design", "../assets/design")
+	r.GET("/", data.HomeHandler)
 	r.GET("/api", data.GetPosts)
 	r.GET("/api/:id", data.GetPostById)
 	r.GET("/post", data.Post)

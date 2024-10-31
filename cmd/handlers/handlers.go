@@ -7,12 +7,16 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+func (db *DataBase) HomeHandler(g *gin.Context) {
+	g.File("../assets/templates/index.html")
+}
+
 func (db *DataBase) GameInfo(g *gin.Context) {
 }
 
 func (db *DataBase) Post(g *gin.Context) {
 	if g.Request.Method == http.MethodGet {
-		g.File("../assets/frontend/build/index.html")
+		g.File("../assets/templates/post.html")
 		return
 	} else if g.Request.Method == http.MethodPost {
 		form, err := g.MultipartForm()
